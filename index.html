@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // which fired before we swapped the document. Trigger manually if present.
     if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
       window.Babel.transformScriptTags();
-    }
+  if (typeof window.__bootstrap === 'function') { try { window.__bootstrap(); } catch (err) { console.error('bootstrap failed', err); } }
   } catch (err) {
     setStatus('Error unpacking: ' + err.message);
     console.error('Bundle unpack error:', err);
