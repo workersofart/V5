@@ -12,7 +12,7 @@
     #__bundler_placeholder { color: #999; font-size: 14px; }
   </style>
   <noscript>
-    <style>#__bundler_loading { display: none; }</style>h
+    <style>#__bundler_loading { display: none; }</style>hh
     <div style="position:fixed;bottom:12px;left:12px;font:13px/1.4 -apple-system,BlinkMacSystemFont,sans-serif;color:#999;background:rgba(255,255,255,0.9);padding:6px 12px;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.08);z-index:10000;">
       This page requires JavaScript to display.
     </div>
@@ -224,7 +224,7 @@ var css = [
   'border:1px solid #2e2e38;background:#111114;',
   'font-family:var(--font-ui,-apple-system,sans-serif);font-size:12.5px;',
   'color:#a0a0b0;display:none;}',
-  '#woa-v2-review.open{display:block;}',
+  '',
   '.woa-v2-label{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;',
   'color:#44445a;font-weight:600;margin-bottom:6px;}',
   '.woa-v2-tx{color:#b8b8cc;font-style:italic;line-height:1.55;',
@@ -792,7 +792,7 @@ function setMicState(state) { /* 'idle' | 'listening' | 'error' */
     btn.classList.add('listening');
     btn.title = 'Click to stop listening';
   } else {
-    btn.innerHTML = MIC_SVG + 'Voice Add';
+    btn.innerHTML = MIC_SVG;
     btn.title = 'Click and speak a task';
   }
 }
@@ -878,7 +878,7 @@ function startRec() {
         now:      new Date(),
       });
       if (_parsed) {
-        showReview(_parsed, false);
+        applyToForm(_parsed); stopRec();
       } else {
         showReview('Could not parse transcript. Please try again.', true);
       }
