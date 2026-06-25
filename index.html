@@ -962,7 +962,7 @@ function inject() {
 
   // ── Review panel (inserted after the button row)
   var rv = document.createElement('div');
-  rv.id = 'woa-v2-review';
+  rv.id = 'woa-v2-review'; rv.style.display = 'none';
   rv.innerHTML = [
     '<div class="woa-v2-label">Voice transcript</div>',
     '<div class="woa-v2-tx"></div>',
